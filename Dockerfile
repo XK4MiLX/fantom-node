@@ -2,7 +2,7 @@ FROM alpine:3.13 as build-stage
 
 ENV FANTOM_NETWORK=opera
 ENV GITHUB_BRANCH=release/1.1.1-rc.2
-ENV GITHUB_URL=https://github.com/Fantom-foundation/go-$%7BFANTOM_NETWORK%7D.git
+ENV GITHUB_URL=https://github.com/Fantom-foundation/go-${FANTOM_NETWORK}.git
 ENV GITHUB_DIR=go-${FANTOM_NETWORK}
 
 ENV GOROOT=/usr/lib/go 
