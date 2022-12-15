@@ -41,7 +41,7 @@ WORKDIR "/root/.${FANTOM_NETWORK}"
 
 EXPOSE 5050 18545 18546 18547 19090
 
-VOLUME [ "/root/.${FANTOM_NETWORK}" , "/genesis"]
+VOLUME [ "/root"]
 
 ENTRYPOINT [ "entrypoint.sh" ]
 
