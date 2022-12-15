@@ -10,8 +10,8 @@ opera \
   --http.addr "0.0.0.0" \
   --http.api "${FANTOM_API}" \
   --http.corsdomain "*" \
-  --http.vhosts "${FANTOM_HOSTNAME}" \
+  --http.vhosts "*"\
   --nousb \
   --verbosity "${FANTOM_VERBOSITY}" \
   --cache "${FANTOM_CACHE}" \
-  --genesis "/genesis/${FANTOM_GENESIS}"
+  --genesis "/root/genesis/${FANTOM_GENESIS}"
