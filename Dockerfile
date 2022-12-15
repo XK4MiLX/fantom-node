@@ -1,14 +1,5 @@
 FROM alpine:3.13 as build-stage
 
-ARG FANTOM_NETWORK=opera
-ARG GITHUB_BRANCH=release/1.1.1-rc.2
-ARG GITHUB_URL=https://github.com/Fantom-foundation/go-${FANTOM_NETWORK}.git
-ARG GITHUB_DIR=go-${FANTOM_NETWORK}
-
-ARG GOROOT=/usr/lib/go 
-ARG GOPATH=/go 
-ARG PATH=$GOROOT/bin:$GOPATH/bin:/build:$PATH
-
 RUN set -xe; \
   apk add --no-cache --virtual .build-deps \
   # get the build dependencies for go
@@ -30,6 +21,14 @@ ENV FANTOM_GENESIS=${FANTOM_GENESIS:-mainnet-109331-pruned-mpt.g}
 ENV FANTOM_API=eth,ftm,net,web3
 ENV FANTOM_VERBOSITY=2
 ENV FANTOM_CACHE=4096
+ENV FANTOM_NETWORK=opera
+ENV GITHUB_BRANCH=release/1.1.1-rc.2
+ENV GITHUB_URL=https://github.com/Fantom-foundation/go-$%7BFANTOM_NETWORK%7D.git
+ENV GITHUB_DIR=go-${FANTOM_NETWORK}
+
+ENV GOROOT=/usr/lib/go 
+ENV GOPATH=/go 
+ENV PATH=$GOROOT/bin:$GOPATH/bin:/build:$PATH
 
 # copy the binary 
 COPY --from=build-stage /usr/local/bin/${FANTOM_NETWORK} /usr/local/bin/${FANTOM_NETWORK}
