@@ -12,10 +12,6 @@ else
   echo "💼 using genesis file ${FANTOM_GENESIS}"
 fi
 
-if [ "" = "$*" ] || [ "run.sh" = "$*" ]; then
-  echo "🦄 Starting Fantom Opera"
-  exec "run.sh"
-else
-  echo "🦄 Starting '$@'"
-  exec "$@"
-fi
+echo "🦄 Starting Fantom Opera"
+exec "run.sh"
+
