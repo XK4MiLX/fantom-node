@@ -12,7 +12,7 @@ ENV PATH=$GOROOT/bin:$GOPATH/bin:/build:$PATH
 RUN set -xe; \
   apk add --no-cache --virtual .build-deps \
   # get the build dependencies for go
-  make gcc go musl-dev linux-headers git; \
+  make gcc go musl-dev bash linux-headers git; \
   # install fantom client from github
   mkdir -p ${GOPATH}; cd ${GOPATH}; \
   git clone --single-branch --branch ${GITHUB_BRANCH} ${GITHUB_URL}; cd ${GITHUB_DIR}; \
@@ -23,11 +23,11 @@ RUN set -xe; \
 
 FROM alpine:latest as opera
 
-RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache ca-certificates bash
 
 ENV FANTOM_NETWORK=opera
 ENV FANTOM_GENESIS=${FANTOM_GENESIS:-mainnet-109331-pruned-mpt.g}
-ENV FANTOM_API=eth,ftm,net,web3
+ENV FANTOM_API=${FANTOM_API:-eth,ftm,net,web3}
 ENV FANTOM_VERBOSITY=2
 ENV FANTOM_CACHE=4096
 
