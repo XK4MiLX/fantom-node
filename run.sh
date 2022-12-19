@@ -10,7 +10,7 @@ opera \
   --http.addr "0.0.0.0" \
   --http.api "${FANTOM_API}" \
   --http.corsdomain "*" \
-  --http.vhosts "*"\
+  --http.vhosts "*" \
   --http.port 8080 \ 
   --verbosity "${FANTOM_VERBOSITY}" \
   --cache "${FANTOM_CACHE}" \
