@@ -36,6 +36,7 @@ COPY --from=build-stage /usr/local/bin/${FANTOM_NETWORK} /usr/local/bin/${FANTOM
 
 COPY run.sh /usr/local/bin
 COPY entrypoint.sh /usr/local/bin
+RUN chmod 755 /usr/local/bin/run.sh /usr/local/bin/entrypoint.sh /usr/local/bin/${FANTOM_NETWORK}
 
 WORKDIR "/root/.${FANTOM_NETWORK}"
 
