@@ -10,9 +10,9 @@ ENV GOPATH=/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:/build:$PATH
 
 RUN set -xe; \
-  apk add --no-cache --virtual bash .build-deps \
+  apk add --no-cache --virtual .build-deps \
   # get the build dependencies for go
-  make gcc go musl-dev linux-headers git; \
+  make gcc go musl-dev bash linux-headers git; \
   # install fantom client from github
   mkdir -p ${GOPATH}; cd ${GOPATH}; \
   git clone --single-branch --branch ${GITHUB_BRANCH} ${GITHUB_URL}; cd ${GITHUB_DIR}; \
