@@ -1,17 +1,15 @@
-#!/usr/bin/env sh
-
+#!/usr/bin/env bash
 # start opera with genesis file
-echo "starting fantom opera"
-
+echo "🦄 Settings: API=${FANTOM_API}"
 set -e
-
 opera \
   --http \
-  --http.addr "0.0.0.0" \
-  --http.api "${FANTOM_API}" \
-  --http.corsdomain "*" \
-  --http.vhosts "*" \
-  --http.port 8080 \ 
-  --verbosity "${FANTOM_VERBOSITY}" \
-  --cache "${FANTOM_CACHE}" \
-  --genesis "/root/genesis/${FANTOM_GENESIS}"
+  --http.addr="0.0.0.0" \
+  --http.api="${FANTOM_API}" \
+  --http.port="8080" \
+  --http.corsdomain="*" \
+  --http.vhosts="*" \
+  --verbosity="${FANTOM_VERBOSITY}" \
+  --cache="${FANTOM_CACHE}" \
+  --genesis="/root/genesis/${FANTOM_GENESIS}"
+
