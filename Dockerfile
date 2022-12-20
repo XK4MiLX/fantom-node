@@ -45,5 +45,3 @@ EXPOSE 5050 8080
 VOLUME [ "/root"]
 
 ENTRYPOINT [ "entrypoint.sh" ]
-
-CMD ["run.sh"]
