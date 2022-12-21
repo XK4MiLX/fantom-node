@@ -6,7 +6,7 @@ opera \
   --http \
   --http.addr="0.0.0.0" \
   --http.api="${FANTOM_API}" \
-  --http.port="8080" \
+  --http.port="18545" \
   --http.corsdomain="*" \
   --http.vhosts="*" \
   --verbosity="${FANTOM_VERBOSITY}" \
