@@ -4,11 +4,16 @@ set -e
 echo "🦄 Settings: API=${FANTOM_API}"
 opera \
   --http \
-  --http.addr="0.0.0.0" \
+  --http.addr=0.0.0.0 \
   --http.api="${FANTOM_API}" \
-  --http.port="18545" \
+  --http.port=80 \
   --http.corsdomain="*" \
   --http.vhosts="*" \
+  --ws \
+  --ws.addr=0.0.0.0 \
+  --ws.port=18546 \
+  --ws.origins="" \
+  --ws.api="${FANTOM_API}" \
   --verbosity="${FANTOM_VERBOSITY}" \
   --cache="${FANTOM_CACHE}" \
   --genesis="/root/genesis/${FANTOM_GENESIS}"
