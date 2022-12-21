@@ -40,7 +40,7 @@ RUN chmod 755 /usr/local/bin/run.sh /usr/local/bin/entrypoint.sh /usr/local/bin/
 
 WORKDIR "/root/.${FANTOM_NETWORK}"
 
-EXPOSE 5050 19090
+EXPOSE 5050 18545
 
 VOLUME [ "/root"]
 
