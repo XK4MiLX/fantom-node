@@ -12,7 +12,7 @@ opera \
   --ws \
   --ws.addr=0.0.0.0 \
   --ws.port=18546 \
-  --ws.origins="" \
+  --ws.origins="*" \
   --ws.api="${FANTOM_API}" \
   --verbosity="${FANTOM_VERBOSITY}" \
   --cache="${FANTOM_CACHE}" \
