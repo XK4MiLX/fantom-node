@@ -27,7 +27,7 @@ RUN apk add --no-cache ca-certificates bash
 
 ENV FANTOM_NETWORK=opera
 ENV FANTOM_GENESIS=${FANTOM_GENESIS:-mainnet-109331-pruned-mpt.g}
-ENV FANTOM_API=${FANTOM_API:-eth,ftm,net,web3}
+ENV FANTOM_API=${FANTOM_API:-eth,ftm,net,web3,sfc}
 ENV FANTOM_VERBOSITY=2
 ENV FANTOM_CACHE=4096
 
@@ -40,7 +40,7 @@ RUN chmod 755 /usr/local/bin/run.sh /usr/local/bin/entrypoint.sh /usr/local/bin/
 
 WORKDIR "/root/.${FANTOM_NETWORK}"
 
-EXPOSE 5050 18545
+EXPOSE 5050 80 18546
 
 VOLUME [ "/root"]
 
