@@ -28,7 +28,7 @@ RUN apk add --no-cache ca-certificates bash
 ENV FANTOM_NETWORK=opera
 ENV FANTOM_GENESIS=${FANTOM_GENESIS:-mainnet-109331-pruned-mpt.g}
 ENV FANTOM_API=${FANTOM_API:-eth,net,web3}
-ENV FANTOM_VERBOSITY=2
+ENV FANTOM_VERBOSITY=${FANTOM_VERBOSITY:-3}
 ENV FANTOM_CACHE=4096
 
 # copy the binary 
