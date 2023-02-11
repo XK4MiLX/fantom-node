@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}      
       - name: Set output
         run: | 
-          echo "repository=${env:GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
+          echo "repository=${{ env.GITHUB_REPOSITORY,, }}" >> $GITHUB_ENV
       - uses: docker/build-push-action@v3
         with:
           push: true
