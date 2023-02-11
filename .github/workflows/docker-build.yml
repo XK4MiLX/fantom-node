@@ -21,11 +21,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}      
-      - id: lower-repo
-        shell: pwsh
-        run: |
-          "::set-output name=repository::$($env:GITHUB_REPOSITORY.ToLowerInvariant())"
+      - name: Set output
+        run: echo "{repository}={$env:GITHUB_REPOSITORY.ToLowerInvariant()}" >> $GITHUB_OUTPUT
       - uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ steps.lower-repo.outputs.repository }}:latest
+          tags: ${{ GITHUB_OUTPUT }}:latest
+          
